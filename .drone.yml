@@ -28,3 +28,19 @@ trigger:
     - refs/heads/master
     - refs/heads/feature/*
     - refs/tags/*
+
+
+---
+kind: pipeline
+type: docker
+name: test3
+
+steps:
+  - name: base
+    image: alpine:3.17.3
+    commands:
+      - echo "trigger from event tag"
+
+trigger:
+  event:
+    - tag

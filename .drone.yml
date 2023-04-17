@@ -27,3 +27,4 @@ trigger:
   ref:
     - refs/heads/master
     - refs/heads/feature/*
+    - refs/tags/*

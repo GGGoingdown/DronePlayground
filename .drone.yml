@@ -1,0 +1,28 @@
+kind: pipeline
+type: docker
+name: test1
+
+steps:
+  - name: base
+    image: alpine:3.17.3
+    commands:
+      - echo "trigger from event push"
+
+trigger:
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: test2
+
+steps:
+  - name: base
+    image: alpine:3.17.3
+    commands:
+      - echo "trigger from event push"
+
+trigger:
+  ref:
+    - refs/heads/master
